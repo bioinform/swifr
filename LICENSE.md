@@ -1,5 +1,5 @@
-Daedalus (c) 2018 by Roche Sequencing Solutions, Inc. All rights reserved. 
-Daedalus is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. You should have received a copy of the license along with this work. If not, see http://creativecommons.org/licenses/by-nc-sa/4.0/.
+swifr (c) 2018 by Roche Sequencing Solutions, Inc. All rights reserved. 
+swifr is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. You should have received a copy of the license along with this work. If not, see http://creativecommons.org/licenses/by-nc-sa/4.0/.
 
 Attribution-NonCommercial-ShareAlike 4.0 International
 
