@@ -8,9 +8,11 @@ TESTSRC=tests/*.cpp
 # include directories -- where to search for header files
 # include for tclap, io-lib, etc...
 
-INC=-I include/ -I /home/dannebar/software_downloads/io_lib-1.14.6/ -I ./external/io_lib_wrapper/ -I ./external/tclap-1.2.1/include/ 
+INC=-I include/ -I ./io_lib-1.14.6/ -I ./external/io_lib_wrapper/ -I ./external/tclap-1.2.1/include/ -I /usr/local/include/ -I /usr/local/lib/
+##INC=-I include/ -I /home/dannebar/software_downloads/io_lib-1.14.6/ -I ./external/io_lib_wrapper/ -I ./external/tclap-1.2.1/include/ 
 # lib directories -- whereto search for compiled static/dynamic libraries
-LIB=-L /home/dannebar/software_downloads/io_lib-1.14.6/lib
+##LIB=-L /home/dannebar/software_downloads/io_lib-1.14.6/lib
+LIB=-L ./io_lib-1.14.6/lib
 IOLIBSO=$(BIN)/
 # io_tools for operating on the bams/sams
 # LIBS=lstaden-read
@@ -20,11 +22,11 @@ all: $(EXE) test
 
 $(EXE):
 	if [ ! -e $(BIN) ]; then mkdir $(BIN); fi
-	$(CC) $(CPPFLAGS) $(INC) $(LIB) -o $(BIN)/$@ $(SRC) -lstaden-read -lpthread -Wl,-rpath,"/home/dannebar/software_downloads/io_lib-1.14.6/lib/"
+	$(CC) $(CPPFLAGS) $(INC) $(LIB) -o $(BIN)/$@ $(SRC) -lstaden-read -lpthread -Wl,-rpath,"./io_lib-1.14.6/lib/"
 
 
 test:
-	 $(CC) $(CPPFLAGS) $(INC) $(LIB) -o $(BIN)/$@ $(TESTSRC) -lstaden-read -Wl,-rpath,"/home/dannebar/software_downloads/io_lib-1.14.6/lib/" 
+	 $(CC) $(CPPFLAGS) $(INC) $(LIB) -o $(BIN)/$@ $(TESTSRC) -lstaden-read -Wl,-rpath,"./io_lib-1.14.6/lib/" 
 
 clean:
 	rm $(BIN)/$(EXE)
