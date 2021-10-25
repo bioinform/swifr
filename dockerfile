@@ -29,6 +29,11 @@ RUN tar xvfz tclap-1.2.1.tar.gz
 
 RUN cd tclap-1.2.1 && ./configure && make && make install && cd ../
 
+###################
+##install samtools
+###################
+RUN apt-get install -y samtools
+
 #################
 ## compile swifr
 #################
@@ -37,9 +42,6 @@ RUN make swifr
 RUN make test
 ENV LD_LIBRARY_PATH=/usr/local/lib 
 
-##CMD find / -name libstaden-read.so.11
-##CMD swifr -h
-CMD ./test
 
 
 
